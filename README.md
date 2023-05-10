@@ -1,3 +1,5 @@
+# Revelとは
+
 Revelは、Go言語で開発されたオープンソースのウェブアプリケーションフレームワークです。Revelは、高速かつシンプルな開発を可能にすることを目指して設計されており、MVC（Model-View-Controller）パターンを採用しています。
 
 以下に、Revelフレームワークの主な特徴や機能をいくつか紹介します。
@@ -73,3 +75,18 @@ myapp/
 
 `main.go`ファイルは、アプリケーションを起動するために使用されます。通常、`main`パッケージ内に定義され、`Revel`パッケージをインポートして必要な設定や起動処理を行います。
 
+# SQL
+```sql
+SELECT
+    EXISTS
+    (
+        SELECT 1
+        FROM BBB
+        WHERE BBB.rev = 5
+    ) + (
+        SELECT 1
+        FROM CCC
+        WHERE CCC.rev = 5
+    ) AS total_records
+;
+```
