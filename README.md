@@ -82,11 +82,11 @@ SELECT
     (
         SELECT 1
         FROM BBB
-        WHERE BBB.rev = 5
+        WHERE BBB.rev = ?
     ) + (
         SELECT 1
         FROM CCC
-        WHERE CCC.rev = 5
-    ) AS total_records
+        WHERE CCC.rev = ?
+    ) AS total_tables
 ;
 ```
