@@ -90,3 +90,10 @@ SELECT
     ) AS total_tables
 ;
 ```
+
+```sql
+select * from docs d left join docs2 d2 on d.id = d2.id
+where (d.updated_at <= '2017-01-01 00:00:00' and d2.updated_at <= '2017-01-01 00:00:00') or
+(d.updated_at is null and d2.updated_at <= '2017-01-01 00:00:00') or
+(d.updated_at <= '2017-01-01 00:00:00' and d2.updated_at is null);
+```
