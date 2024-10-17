@@ -1,3 +1,4 @@
+```go
 package main
 
 import "fmt"
@@ -25,3 +26,4 @@ func main() {
 
     findDataById(aaa, "aaa1")
 }
+```
