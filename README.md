@@ -1,11 +1,27 @@
-いろいろ。
+package main
 
-お久しぶりです！
-久々にサッカーどうですか？ご友人も多めに是非！
-人数調整の関係で早めに回答いただけると嬉しいです:おじぎ_男性:
-日時:7/6(土)17:00-19:00
-場所：妙正寺運動公園グランド
-(東京都中野区松が丘１－３３)
-交通：西武新宿線新井薬師前駅から北へ徒歩5分
-参加費:500円ほど。
-スパイクOK。砂のコートです。
+import "fmt"
+
+type Data struct {
+    id    string
+    datas []string
+}
+
+func findDataById(dataSlice []Data, targetId string) {
+    for _, data := range dataSlice {
+        if data.id == targetId {
+            fmt.Printf("ID: %s, Data: %v\n", data.id, data.datas)
+            return
+        }
+    }
+    fmt.Printf("ID %s not found\n", targetId)
+}
+
+func main() {
+    var aaa []Data = []Data{
+        {id: "aaa1", datas: []string{"data1", "data2"}},
+        {id: "aaa2", datas: []string{"data3", "data4"}},
+    }
+
+    findDataById(aaa, "aaa1")
+}
