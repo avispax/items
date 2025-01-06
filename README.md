@@ -1,11 +1,45 @@
-いろいろ。
+```go
+package main
 
-お久しぶりです！
-久々にサッカーどうですか？ご友人も多めに是非！
-人数調整の関係で早めに回答いただけると嬉しいです:おじぎ_男性:
-日時:7/6(土)17:00-19:00
-場所：妙正寺運動公園グランド
-(東京都中野区松が丘１－３３)
-交通：西武新宿線新井薬師前駅から北へ徒歩5分
-参加費:500円ほど。
-スパイクOK。砂のコートです。
+import "fmt"
+
+type Data struct {
+    id    string
+    datas []string
+}
+
+func findDataById(dataSlice []Data, targetId string) {
+    for _, data := range dataSlice {
+        if data.id == targetId {
+            fmt.Printf("ID: %s, Data: %v\n", data.id, data.datas)
+            return
+        }
+    }
+    fmt.Printf("ID %s not found\n", targetId)
+}
+
+func main() {
+    var aaa []Data = []Data{
+        {id: "aaa1", datas: []string{"data1", "data2"}},
+        {id: "aaa2", datas: []string{"data3", "data4"}},
+    }
+
+    findDataById(aaa, "aaa1")
+}
+```
+金融業界で使われる用語とその意味
+1. Preceding Business Day (前営業日)
+意味: 支払日が休日の場合、その直前の営業日を支払日とするルール。
+特徴: 貸付契約や債券の利払い設定で使われることがあります。
+2. Following Business Day (翌営業日)
+意味: 支払日が休日の場合、その直後の営業日を支払日とするルール。
+特徴: デリバティブ契約や一部の債券決済で一般的。
+3. Modified Following Business Day (修正翌営業日)
+意味: 翌営業日が翌月に跨る場合は、前営業日を支払日とするルール。
+特徴: 月末ベースでの決済に使われることが多い。
+4. Modified Preceding Business Day (修正前営業日)
+意味: 前営業日が前月に跨る場合は、翌営業日を支払日とするルール。
+特徴: 特定の市場や契約条件に応じて利用される。
+5. End of Month (EOM)
+意味: 支払日を月末に設定するルール。
+補足: 「Modified Following Business Day」と組み合わせて使われることが多い。
